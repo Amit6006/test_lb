@@ -1,6 +1,6 @@
 sudo apt-get install nginx
 sudo apt-get install apache2-utils
-docker run -d -p 5003:5000 dok
+docker run -d -p 5003:5000 dok  //ren dee
 docker run -d -p 5004:5000 dok
 docker run -d -p 5005:5000 dok
 docker run -d -p 5006:5000 dok
@@ -30,9 +30,8 @@ http {
 
     server {
         listen 80;
-
         location / {
-            proxy_pass http://flask_app;
+            proxy_pass http://flask_app;    //keep only this
             proxy_set_header Host $host;
             proxy_set_header X-Real-IP $remote_addr;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
